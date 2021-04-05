@@ -21,11 +21,11 @@ h1{
     width: 40%;
 }
 
-.main-info-section{
+.main-info-section, .quiz{
     margin: 20px auto;
     width: 95%;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items:center;
     }
 
@@ -41,11 +41,14 @@ h1{
     position: absolute;
       width: 50%;
       height: 80%;
-      margin-top: -155px;
+      margin-top: -150px;
+      border-radius: 5px;
+      vertical-align: middle;
       
   }
 .map-section h2{
     color: white;
+    z-index: 0;
 }
 
 .flag{
@@ -81,4 +84,38 @@ h1{
   }
   .info-list li:nth-child(odd) {
     background-color: #d6d6d6;
+  }
+
+
+.quiz-btn-div{
+    margin: 0 auto;
+    margin-top: 70px;
+    text-align: center;
+}
+  
+  .question, .answer{
+      display: flex;
+      justify-content: space-between;
+      flex-direction: column;
+      text-align: center;
+      background-color: rgb(157, 166, 173);
+      height: 500px;
+      width: 500px;
+  }
+
+  #quiz-country{
+      margin-left: auto;
+      margin-right: auto;
+      width: 8em
+  }
+
+  #radio{
+      display: flex;
+      flex-direction: column;
+      font-size: 14px;
+      margin: 0 auto;
+  }
+  .answer-btn{
+     margin: 15px auto;
+     width: 75%;
   }
