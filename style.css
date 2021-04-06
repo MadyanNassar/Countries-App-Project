@@ -24,6 +24,7 @@ h1{
 .main-info-section, .quiz{
     margin: 20px auto;
     width: 95%;
+    height: 100%;
     display: flex;
     justify-content: space-around;
     align-items:center;
@@ -98,7 +99,8 @@ h1{
       justify-content: space-between;
       flex-direction: column;
       text-align: center;
-      background-color: rgb(157, 166, 173);
+      align-items: center;
+      background-color: #927272!important;
       height: 500px;
       width: 500px;
   }
@@ -118,4 +120,27 @@ h1{
   .answer-btn{
      margin: 15px auto;
      width: 75%;
+     color: white;
+
+  }
+  #hint{
+      display: flex;
+      font-size: 30px;
+      width:80%;
+      height: 80%;
+      text-align: center;
+      align-items: center;
+  }
+  .blink_icon {
+    float: right;
+    animation: blinker 1.5s linear infinite;
+  }
+  @keyframes blinker {
+    50% {
+      opacity: 0;
+    }
+  }
+ 
+  #score-sec{
+      text-align: center;
   }

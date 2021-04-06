@@ -10,27 +10,23 @@
     <link rel="stylesheet" href="style.css">
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
     <script src="europe.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.7/css/all.css">
     <script src="script.js" defer></script>
-    
-
 </head>
 <body>
  <header>
     <h1>Welcome to Country App</h1>
  </header>
-
-
  <div class="input-group">
     <input type="search" class="form-control rounded" placeholder="Type country name to get info" aria-label="Search"
       aria-describedby="search-addon" />
     <button type="button" class="btn btn-outline-primary" id="quiz-btn">search</button>
   </div>
 <hr>
-
 <section class="main-info-section">
     <section class="flag-info">
         <div class="flag">
-            <img id="flag-img" alt="#">
+            <img id="flag-img">
         </div>
         <div class="info ">
             <h2>Country Information</h2>   
@@ -46,29 +42,47 @@
         </div>
     </section>
     <section class="map-section ">
-      <h2>search a Country to see it on map</h2>
-
+      <div><h2>search a Country to see it on map</h2></div>
         <div id="map"></div>
-
     </section>
 </section>
 <div class="quiz-btn-div">
   <button type="button" class="btn btn-primary btn-lg" id="quiz-button">Start the Quiz</button>
 </div>
-
-
 <div class="quiz">
-  <div class="question">
+  <div class="question shadow-lg p-3 mb-5 bg-white rounded">
     <h3> What is the name of the country</h3>
-    <img id="quiz-country" src="#" alt="#">
+    <p  class="fw-bold" id="hint"></p>
+    <img id="quiz-country">
   </div>
-  <div class="answer">
+  <div class="answer shadow p-3 mb-5 bg-white rounded">
     <h3>Choose the correct answer</h3>
     <div id="radio">
-
     </div>
      </div>
 </div>
-
+<div id="score-sec">
+  <p id="score">
+    <span id="current-ques"></span>
+    /
+    <span id="num-of-ques"></span>
+  </p>
+</div>
+<footer class="bg-dark text-center text-white">
+  <div class="container p-4 pb-0">
+    <section class="mb-4">
+      <a class="btn btn-outline-light btn-floating m-1" href="https://www.linkedin.com/in/madyan-nassar/" role="button" target="_blank"
+        ><i class="fab fa-linkedin-in"></i
+      ></a>
+      <a class="btn btn-outline-light btn-floating m-1" href="https://github.com/MadyanNassar" role="button" target="_blank"
+        ><i class="fab fa-github"></i
+      ></a>
+    </section>
+  </div>
+  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+    © 2021 Copyright:
+    <span>Madyan Nassar</span>
+  </div>
+</footer>
 </body>
 </html>
