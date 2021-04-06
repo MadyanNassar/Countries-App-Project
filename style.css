@@ -6,9 +6,46 @@ body {
     background: rgb(2,0,36);
     background: radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(161,161,168,1) 61%);
 }
+nav{
+    animation: 1s ease-out 0s 1 slideNav;
+     border-radius: 5px;
+    box-shadow: rgb(12, 12, 12) 1px 5px 10px 4px;
+    margin-bottom: 10px;
+}
 
+#header-title{
+    animation: 1s ease-out 0s 1 slideHeaderTitle;
+    cursor:default;
+}
+@keyframes slideHeaderTitle {
+    0% {
+      transform: translateY(-100%);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+@keyframes slideNav {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+.navbar{
+    background-color: black;
+}
 header{
  padding: 20px;
+}
+.bg-image{
+    background-image: url(media/header1.jpg);
+    height: 400px; 
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 5px;
+    box-shadow: rgb(12, 12, 12) 1px 5px 10px 4px;
 }
 
 h1{

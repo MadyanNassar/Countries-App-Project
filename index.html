@@ -14,13 +14,54 @@
     <script src="script.js" defer></script>
 </head>
 <body>
- <header>
-    <h1>Welcome to Country App</h1>
- </header>
- <div class="input-group">
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-secondary">
+      <div class="container-fluid">
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-mdb-toggle="collapse"
+          data-mdb-target="#navbarExample01"
+          aria-controls="navbarExample01"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <i class="fas fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarExample01">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item active">
+              <a class="nav-link" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#search">Country Information</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#quiz">Quiz</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#about">About</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div
+      class="p-5 text-center bg-image"
+    >
+      <div class="mask" id="header-title" style="background-color: rgba(0, 0, 0, 0.6);">
+        <div class="d-flex justify-content-center align-items-center h-100">
+          <div class="text-white">
+            <h1 class="mb-3">Welcome To Countries App</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+ <div class="input-group" id="search">
     <input type="search" class="form-control rounded" placeholder="Type country name to get info" aria-label="Search"
       aria-describedby="search-addon" />
-    <button type="button" class="btn btn-outline-primary" id="quiz-btn">search</button>
+    <button type="button" class="btn btn-primary" id="quiz-btn">search</button>
   </div>
 <hr>
 <section class="main-info-section">
@@ -46,7 +87,7 @@
         <div id="map"></div>
     </section>
 </section>
-<div class="quiz-btn-div">
+<div class="quiz-btn-div" id="quiz">
   <button type="button" class="btn btn-primary btn-lg" id="quiz-button">Start the Quiz</button>
 </div>
 <div class="quiz">
@@ -68,7 +109,7 @@
     <span id="num-of-ques"></span>
   </p>
 </div>
-<footer class="bg-dark text-center text-white">
+<footer class="bg-dark text-center text-white" id="about">
   <div class="container p-4 pb-0">
     <section class="mb-4">
       <a class="btn btn-outline-light btn-floating m-1" href="https://www.linkedin.com/in/madyan-nassar/" role="button" target="_blank"

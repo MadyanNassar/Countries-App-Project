@@ -1,4 +1,4 @@
-const search = document.querySelector('button')
+const search = document.getElementById('quiz-btn')
 const input = document.querySelector('input')
 const countryName = document.getElementById('name')
 const nativeName = document.getElementById('native-name')
