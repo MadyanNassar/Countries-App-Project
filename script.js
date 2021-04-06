@@ -15,6 +15,8 @@ const hint = document.getElementById('hint')
 const scoreSec = document.getElementById('score-sec')
 const currentQues = document.getElementById('current-ques')
 const numOfQues = document.getElementById('num-of-ques')
+const mapTxt = document.getElementById('map-txt') 
+const mapView = document.getElementById('map')
 let quesNum = 0;
 let numOfCorrAns =0;
 let numOfAns = 0;
@@ -31,6 +33,8 @@ function fetchData(url) {
   }
 
   function renderData(data) {
+    mapView.style.display='block';
+    mapTxt.style.display='none';
      flag.src = data[0].flag;
      flag.alt = data[0].name;
      countryName.textContent = data[0].name
@@ -79,9 +83,24 @@ L.geoJSON(europe, {
   
   function renderError(error) {
     console.log(error);
-    // errTitle.textContent = error;
-    // errTitle.style.color = 'red';
-
+    mapView.style.display='none';
+    flag.src = '';
+    flag.alt = '';
+    countryName.textContent = '';
+    nativeName.textContent = '';
+    capital.textContent = '';
+    region.textContent =  '';
+    currency.textContent ='';
+    language.textContent = '';
+    population.textContent ='';
+    mapTxt.style.display='block';
+   if(input.value.length > 0){
+      mapTxt.textContent = `it seems that you entered a valid country name or didn't enter any thing ..... ${input.value} is not a country , check the spelling and try again please `
+    }
+    else{
+      mapTxt.textContent = 'Please enter the name of country to see its info'
+    }
+    mapTxt.style.color='red'  
   }
 
   async function main() {
@@ -171,7 +190,7 @@ console.log(numOfAns)
       const resultCountries = shuffle.slice(1, 7);
        generateQuiz(resultCountries);
     } catch (error) {
-      renderError(error);
+      quizBtn.textContent='sorry there is no data'
     }
   }
   

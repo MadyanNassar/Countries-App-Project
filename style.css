@@ -158,7 +158,13 @@ h1{
      margin: 15px auto;
      width: 75%;
      color: white;
-
+  }
+  .answer-btn:hover{
+    height: 40px;
+    transform: scale(1.1);
+    color: #fff;
+    background: #111;
+    border-radius: 10px;
   }
   #hint{
       display: flex;
