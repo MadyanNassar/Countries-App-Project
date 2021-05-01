@@ -1,4 +1,5 @@
 //  elements declaration
+
 const search = document.getElementById('quiz-btn')
 const input = document.querySelector('input')
 const countryName = document.getElementById('name')
@@ -18,6 +19,10 @@ const currentQues = document.getElementById('current-ques')
 const numOfQues = document.getElementById('num-of-ques')
 const mapTxt = document.getElementById('map-txt') 
 const mapView = document.getElementById('map')
+const quesHint = document.getElementById('question-hint')
+const lstAns = document.getElementById('list-answers')
+const mainInfo = document.getElementById('main-info-section')
+
 
 // variables for quiz
 let quesNum = 0;
@@ -49,6 +54,8 @@ function fetchData(url) {
      population.textContent = new Intl.NumberFormat().format(populationNum) // format big number (111222333 -> 111,222,333)
      currency.textContent = data[0].currencies[0].name
      language.textContent = data[0].languages[0].name
+     mainInfo.style.display='flex';
+
 
      // start working on map section
 
@@ -68,7 +75,7 @@ function fetchData(url) {
 
   // add marker to map on the specific latitude and longitude
   L.marker(myLatLong).addTo(map);
-  map.dragging.disable()
+  // map.dragging.disable()
   map.scrollWheelZoom.disable();
 
   // get the correct country in order to put some styling (boarder feature)
@@ -80,17 +87,25 @@ L.geoJSON(countriesMap, {
   style: function(feature) {
       switch ((feature.properties.name_long)) {
           case `${selectedCountry[0].properties.name_long}`: return {color: "red"};
-          default :  return {color: "black"};
+          // default :  return {color: "black"};
       }
   }
 }).addTo(map);
+
+// mapView.addEventListener('click', ()=>{
+//   console.log(mapView);
+//   mapView.classList.add("full-screen");
+// })
+
+
   }
 
   // function when there is error
   function renderError(error) {
-    mapView.style.display='none';
-    mapTxt.style.display='block'; 
+    mapTxt.style.display='block';
+    mapView.style.display='none'; 
     mapTxt.textContent = '';
+
     // check if the user input text on search input
     if(input.value.length > 0){
      if (countryName.textContent.length > 0 )  {
@@ -211,8 +226,12 @@ const generateQuiz = (resultCountries)=>{
     }
   }
   
-quizBtn.addEventListener('click', quiz);
+quizBtn.addEventListener('click', ()=>{
+  quesHint.textContent ='What is the name of country';
+  lstAns.textContent='choose one from the list';
+  quiz();
+});
 
-window.onload = function() {
-scoreSec.style.display='none'; // hide '/' when loading the page
-};
+// window.onload = function() {
+// scoreSec.style.display='none';
+// };

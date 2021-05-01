@@ -54,17 +54,59 @@ h1{
 }
 
 .input-group{
-    margin: 0 auto;
+    margin: 10px auto;
     width: 40%;
 }
 
-.main-info-section, .quiz{
+.tab { 
+  display: flex;
+  justify-content: space-evenly;
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+}
+
+.tab button {
+  width: 100%;
+  font-weight: bold;
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+}
+
+.tab button:hover {
+  background-color: rgb(231, 193, 68);
+  color: rgb(0, 17, 255);
+}
+
+/* Create an active/current tab-link class */
+.tab button.active {
+  background-color: #ccc;
+}
+
+.tab-content {
+  display: none;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-top: none;
+}
+
+
+.quiz, .main-info-section{
     margin: 20px auto;
     width: 95%;
     height: 100%;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items:center;
+    }
+
+.main-info-section{
+display: none;
     }
 
 .flag-info, .map-section{
@@ -76,9 +118,10 @@ h1{
     align-items: center;
 }
 #map{
-    position: absolute;
-      width: 50%;
-      height: 80%;
+      position: absolute;
+      display: flex;
+      width: 40%;
+      height: calc(100vw/3);
       margin-top: -150px;
       border-radius: 5px;
       vertical-align: middle;
@@ -88,7 +131,6 @@ h1{
     color: white;
     z-index: 0;
 }
-
 .flag{
     width: 200px;
     margin-bottom: 10px;

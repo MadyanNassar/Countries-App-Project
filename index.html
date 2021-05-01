@@ -12,6 +12,7 @@
     <script src="countriesMap.js"></script>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.7/css/all.css">
     <script src="script.js" defer></script>
+    <script src="tabs.js" defer></script>
 </head>
 <body>
   <header>
@@ -33,11 +34,8 @@
             <li class="nav-item active">
               <a class="nav-link" aria-current="page" href="#">Home</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#search">Country Information</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#quiz">Quiz</a>
+            <li class="nav-item active">
+              <a class="nav-link" aria-current="page" href="#tab">Country info and Quiz</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#about">About</a>
@@ -58,56 +56,68 @@
       </div>
     </div>
   </header>
- <div class="input-group" id="search">
-    <input type="search" class="form-control rounded" placeholder="Type country name to get info" aria-label="Search"
-      aria-describedby="search-addon" />
-    <button type="button" class="btn btn-primary" id="quiz-btn">search</button>
-  </div>
-<hr>
-<section class="main-info-section">
+ 
+<!-- Tab links -->
+<div class="tab" id="tab">
+  <button class="tab-links" onclick="tabs(event, 'country-info')">country-info</button>
+  <button class="tab-links" onclick="tabs(event, 'quiz-section')">quiz</button>
+</div>
+
+<section class="tab-content" id="country-info">    
+  <div class="input-group" id="search">
+      <input type="search" class="form-control rounded" placeholder="Type country name to get info" aria-label="Search"
+        aria-describedby="search-addon" />
+      <button type="button" class="btn btn-primary" id="quiz-btn">search</button>
+    </div>
+  <hr>
+  <div class= "main-info-section" id="main-info-section">
     <section class="flag-info">
-        <div class="flag">
-            <img id="flag-img">
-        </div>
-        <div class="info ">
-            <h2>Country Information</h2>   
-            <ul class="info-list">
-                <li><p> Country Name is : <span  id="name"></span></p></li>
-                <li><p> Native Name is : <span  id="native-name"></span></p></li>
-                <li><p> The Capital is : <span  id="capital"></span></p></li>
-                <li><p> The Region is : <span  id="region"></span></p></li>
-                <li><p> The Population is : <span  id="population"></span></p></li>
-                <li><p>The Currency is : <span  id="currency"></span></p></li>
-                <li><p> The Language is : <span  id="language"></span></p></li>
-              </ul>
-        </div>
-    </section>
-    <section class="map-section ">
-      <div><h2 id="map-txt">search a Country to see it on map</h2></div>
-        <div id="map"></div>
-    </section>
+          <div class="flag">
+              <img id="flag-img">
+          </div>
+          <div class="info">
+              <h2>Country Information</h2>   
+              <ul class="info-list">
+                  <li><p> Country Name is : <span  id="name"></span></p></li>
+                  <li><p> Native Name is : <span  id="native-name"></span></p></li>
+                  <li><p> The Capital is : <span  id="capital"></span></p></li>
+                  <li><p> The Region is : <span  id="region"></span></p></li>
+                  <li><p> The Population is : <span  id="population"></span></p></li>
+                  <li><p>The Currency is : <span  id="currency"></span></p></li>
+                  <li><p> The Language is : <span  id="language"></span></p></li>
+                </ul>
+          </div>
+      </section>
+      <section class="map-section" id="map-section">
+        <div><h2 id="map-txt"></h2></div>
+          <div id="map"></div>
+      </section>
+  </div>
 </section>
-<div class="quiz-btn-div" id="quiz">
+<div class="tab-content" id="quiz-section">
+<div class="quiz-btn-div" >
   <button type="button" class="btn btn-primary btn-lg" id="quiz-button">Start the Quiz</button>
 </div>
+<hr>
 <div class="quiz">
   <div class="question shadow-lg p-3 mb-5 bg-white rounded">
-    <h3> What is the name of the country</h3>
+    <h3 id="question-hint"> Here I will give you the flag of country and some hints like Continent and Capital </h3>
     <p  class="fw-bold" id="hint"></p>
     <img id="quiz-country">
   </div>
   <div class="answer shadow p-3 mb-5 bg-white rounded">
-    <h3>Choose the correct answer</h3>
+    <h3 id="list-answers">here will see the options to select the correct country</h3>
     <div id="radio">
     </div>
      </div>
 </div>
 <div id="score-sec">
   <p id="score">
-    <span id="current-ques"></span>
+    <span id="current-ques"> _ </span>
     /
-    <span id="num-of-ques"></span>
+    <span id="num-of-ques"> _ </span>
   </p>
+</div>
 </div>
 <footer class="bg-dark text-center text-white" id="about">
   <div class="container p-4 pb-0">
